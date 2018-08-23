@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .tarjeta{
+        width: 200px;
+        height: 200px;
+        background-color: yellowgreen;
+        box-shadow: 2px 2px 5px gray;
+        margin: 5px;
+    }
+    .contenedor{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .hediondo{
+        padding: 10px;
+        background-color:gray;
+        color: white;
+        border-radius:10px;
+        text-decoration: none;
+        -moz-user-select: none;
+    }
+    </style>
+</head>
+<body>
+    <a href="#" class="hediondo">Crear tarjeta</button>
+    <input type="text" placeholder="Nota aquì" id="texto">
+    <div class="contenedor"></div>
+    <!-- <div class="contenedor">
+            <div id="tarjeta"></div>
+            <div id="tarjeta"></div>
+            <div id="tarjeta"></div>
+    </div> -->
+    
+    <script>
+        var hediondo = document.getElementsByClassName("hediondo")[0];
+        var contenedor =document.getElementsByClassName('contenedor')[0];  
+        var texto = document.getElementById('texto')
+
+        hediondo.addEventListener("click",function (){
+            console.log('click en boton');    
+            var miTarjeta  = document.createElement('div');
+            miTarjeta.classList.add('tarjeta');
+            miTarjeta.innerHTML = texto.value;
+            contenedor.appendChild(miTarjeta);              
+        });
+        
+    </script>
+</body>
+</html>
